@@ -1,0 +1,22 @@
+version: "3.0"
+services:
+  apache:
+    image: nimmis/apache-php7
+    ports:
+      - 80:80
+    volumes:
+      - ./www:/var/www/html/
+  db:
+    image: mysql/mysql-server:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: database    
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+   
