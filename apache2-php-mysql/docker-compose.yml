@@ -1,14 +1,20 @@
 version: "3.0"
 services:
   apache:
-    image: nimmis/apache-php7
+    build: 
+      context: .
+      dockerfile: dockerfiles/apache_php.dockerfile
+    container_name: qwavee-apache_php-container
     ports:
       - 80:80
+      - 9000:9000      
     volumes:
       - ./www:/var/www/html/
+
   db:
     image: mysql/mysql-server:8.0
     restart: always
+    container_name: qwavee-mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: admin
