@@ -1,4 +1,2 @@
-./mysql
-./www
-./mysql/*
-./www/*
+mysql/
+www/
