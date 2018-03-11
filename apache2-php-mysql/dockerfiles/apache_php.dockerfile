@@ -14,7 +14,9 @@ RUN cd /root \
     && cp modules/xdebug.so /usr/lib/php/20151012 \
     && echo "zend_extension = /usr/lib/php/20151012/xdebug.so" >> /etc/php/7.0/apache2/php.ini
 
-COPY ./config_files/xdebug.ini /etc/php/7.0/mods-available/xdebug.ini    
+COPY ./config_files/xdebug.ini /etc/php/7.0/mods-available/xdebug.ini   
+
+RUN phpenmod xdebug
 
 # Activate rewrite extension
 RUN a2enmod rewrite
