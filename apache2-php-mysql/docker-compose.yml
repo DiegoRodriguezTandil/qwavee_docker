@@ -7,7 +7,6 @@ services:
     container_name: qwavee-apache_php-container
     ports:
       - 80:80
-      - 9000:9000      
     volumes:
       - ./www:/var/www/html/
 
