@@ -9,6 +9,7 @@ services:
       - 80:80
     volumes:
       - ./www:/var/www/html/
+      - ./apache2/sites-enabled:/etc/apache2/sites-enabled/
 
   db:
     image: mysql/mysql-server:8.0
