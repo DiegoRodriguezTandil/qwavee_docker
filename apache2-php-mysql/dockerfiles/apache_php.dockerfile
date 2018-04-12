@@ -1,12 +1,15 @@
 FROM nimmis/apache-php7
 
 # Installation de php-dev (phpize)
-
-
 RUN apt-get update -y \
-    && apt-get install -y php7.0-dev php7.0-mbstring \
-    && git
-    && php7.0-sybase
+    && apt-get install -y php7.0-dev php7.0-mbstring php7.0-sybase\
+        git
+
+# Installation de Librerias PHP
+RUN apt-get install -y php7.0-mbstring php7.0-sybase
+
+# Installation de otras librerias
+RUN apt-get install git
 
 # Install xdebug
 RUN cd /root \
