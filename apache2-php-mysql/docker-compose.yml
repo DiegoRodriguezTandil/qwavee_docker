@@ -8,7 +8,9 @@ services:
     ports:
       - 80:80
     depends_on:
-      - db:mysql      
+      - db
+    links:
+      - db:mysql       
     volumes:
       - ./www:/var/www/html/
       - ./apache2/sites-enabled:/etc/apache2/sites-enabled/
