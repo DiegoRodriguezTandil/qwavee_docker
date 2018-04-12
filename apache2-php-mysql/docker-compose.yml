@@ -7,12 +7,14 @@ services:
     container_name: qwavee-apache_php-container
     ports:
       - 80:80
+    depends_on:
+      - db      
     volumes:
       - ./www:/var/www/html/
       - ./apache2/sites-enabled:/etc/apache2/sites-enabled/
 
   db:
-    image: mysql/mysql-server:8.0
+    image: mysql/mysql-server:5.7.21
     restart: always
     container_name: qwavee-mysql-container
     environment:
