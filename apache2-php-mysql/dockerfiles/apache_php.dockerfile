@@ -1,7 +1,7 @@
 FROM nimmis/apache-php7
 
 # Installation de php-dev (phpize)
-RUN apt-get update -y && apt-get install php7.0-dev -y
+RUN apt-get update -y && apt-get install php7.0-dev  php7.0-mbstring php7.0-sybase -y
 
 # Install xdebug
 RUN cd /root \
