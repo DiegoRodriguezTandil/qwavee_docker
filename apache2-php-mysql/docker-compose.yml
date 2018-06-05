@@ -4,6 +4,8 @@ services:
     build: 
       context: .
       dockerfile: dockerfiles/apache_php.dockerfile
+      args:
+        IP_HOST: "192.168.1.35"
     container_name: qwavee-apache_php-container
     ports:
       - 80:80
@@ -14,12 +16,14 @@ services:
     volumes:
       - ./www:/var/www/html/
       - ./apache2/sites-enabled:/etc/apache2/sites-enabled/
+    networks:
+      - qwavee-network      
 
   db:
     image: mysql/mysql-server:5.7.21
-    restart: always
     container_name: qwavee-mysql-container
     environment:
+      MYSQL_ROOT_HOST: "%"      
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: admin
       MYSQL_PASSWORD: test
@@ -28,5 +32,10 @@ services:
       - 3306:3306
     volumes:
       - ./mysql:/var/lib/mysql
-
-   
+    networks:
+      - qwavee-network
+      
+networks:
+  qwavee-network:
+    external:
+      name: qwavee-docker-network
