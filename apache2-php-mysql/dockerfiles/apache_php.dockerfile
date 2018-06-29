@@ -6,7 +6,7 @@ RUN apt-get update -y \
     git
 
 # Installation de Librerias PHP
-RUN apt-get install -y php7.0-mbstring php7.0-sybase
+RUN apt-get install -y php7.0-mbstring php7.0-sybase php-bcmath
 
 # Installation de otras librerias
 RUN apt-get install git
