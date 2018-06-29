@@ -1,0 +1,17 @@
+version: "3.0"
+services:
+  postgres:
+    image: postgres:10.4
+    container_name: qwavee-postgres-containe
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mysqlp4ss
+      POSTGRES_USER: qwavee
+    networks:
+      qwavee-network:
+
+networks:
+  qwavee-network:
+    external:
+      name: qwavee-docker-network
