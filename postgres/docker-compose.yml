@@ -2,7 +2,7 @@ version: "3.0"
 services:
   postgres:
     image: postgres:10.4
-    container_name: qwavee-postgres-containe
+    container_name: qwavee-postgres-container
     ports:
       - "5432:5432"
     environment:
