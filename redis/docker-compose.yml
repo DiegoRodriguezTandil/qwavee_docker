@@ -3,10 +3,13 @@ services:
   redis:
     image: redis:alpine
     container_name: qwavee-redis-container
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data:/data
     ports:
       - "6379:6379"
     networks:
-      qwavee-network
+      qwavee-network:
 
 networks:
   qwavee-network:
