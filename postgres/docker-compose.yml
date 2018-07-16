@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: mysqlp4ss
       POSTGRES_USER: qwavee
     networks:
-      qwavee-network
+      qwavee-network:
 
 networks:
   qwavee-network:
