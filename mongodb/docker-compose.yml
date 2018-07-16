@@ -1,6 +1,6 @@
 version: "3.0"
 services:
-  redis:
+  mongo:
     image: mongo:latest
     container_name: qwavee-mongodb-container
     command: ["mongod", "--smallfiles", "--logpath=/dev/null", "--dbpath", "/data"]
