@@ -1,0 +1,24 @@
+version: "3.0"
+services:
+  redis:
+    image: mongo:latest
+    container_name: qwavee-mongodb-container
+    command: ["mongod", "--smallfiles", "--logpath=/dev/null", "--dbpath", "/data"]
+    environment:
+      - MONGO_DATA_DIR=/data
+      - MONGO_LOG_DIR=/dev/null
+      - MONGODB_ADMIN_USER=root
+      - MONGODB_ADMIN_PASS=mongodbpass
+      - MONGODB_USER="user" 
+      - MONGODB_PASS="pass"      
+    volumes:
+      - ./data:/data
+    ports:
+      - "27017:27017"
+    networks:
+      qwavee-network:
+
+networks:
+  qwavee-network:
+    external:
+      name: qwavee-docker-network

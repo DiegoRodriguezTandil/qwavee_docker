@@ -3,3 +3,5 @@ apache2-php-mysql/.history
 apache2-php-mysql/.DS_Store
 apache2-php-mysql/.vscode/
 .history/
+redis/data
+mongodb/data
