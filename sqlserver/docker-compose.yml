@@ -1,8 +1,9 @@
-version: "2"
+version: "3"
 services:
   sqlserver:
     image: microsoft/mssql-server-linux:2017-latest
     container_name: qwavee-sqlserver-container
+    restart: always
     environment:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: Qwavee!321
